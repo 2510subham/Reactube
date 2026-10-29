@@ -28,7 +28,8 @@
     "eject": "react-scripts eject"
   },
   "overrides": {
-    "node-forge": "1.4.1"
+    "node-forge": "1.4.1",
+    "encodeurl": "2.0.0"
   },
   "eslintConfig": {
     "extends": [

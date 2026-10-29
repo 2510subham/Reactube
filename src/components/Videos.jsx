@@ -4,10 +4,9 @@ import VideoCard from './VideoCard';
 import ChannelCard from './ChannelCard';
 
 const Videos = ({videos,direction}) => {
-  console.log(videos)
-  if(!videos?.length) return "Loading..."
+  if(!videos?.length) return <div className="loading-state">Loading videos...</div>
   return (
-      <Stack direction={direction || "row" }flexWrap="wrap" justifyContent="start" gap={2}>
+      <Stack className={direction === 'column' ? 'video-list' : 'video-grid'} direction={direction || "row" } flexWrap="wrap">
         {
           videos.map((video,index)=>(
             <Box key={index}>

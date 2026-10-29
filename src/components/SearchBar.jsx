@@ -24,17 +24,10 @@ const SearchBar = () =>
         }
     }
     return (
-        <Paper component="form" onSubmit={handleSubmit} 
-        sx={{
-            borderRadius:20,
-            border:'1px solid #e3e3e3',
-            pl:2,
-            boxShadow:'none',
-            mr:{sm:5}
-        }} >
-            <input className="search-bar" placeholder="search..." value={searchTerm} onChange={searching}
+        <Paper component="form" className="search-form" onSubmit={handleSubmit}>
+            <input className="search-bar" aria-label="Search" placeholder="Search" value={searchTerm} onChange={searching}
              />
-             <IconButton type="submit" sx={{p:'10px' ,color:'red'}}>
+             <IconButton type="submit" className="search-button" aria-label="Submit search">
                 <Search/>
              </IconButton>
         </Paper>

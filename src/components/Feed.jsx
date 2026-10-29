@@ -17,17 +17,15 @@ const [videos, setVideos] = useState([]);
     },[selectedCategory])
 
 return (
-    <Stack sx={{flexDirection:{sx:"column",md:"row"}}}>
-      <Box sx={{height:{sx:'auto',md:'92vh'},borderRight:'1px solid #3d3d3d',px:{sx:0,md:2}}}>
+    <Stack className="page-layout landing-layout">
+      <Box className="sidebar-container category-bar-container">
           <Sidebar selectedCategory={selectedCategory} setselectedCategory={setselectedCategory}/>
-          <Typography className="copyright" varient="body2" sx={{mt:1.5,color:"#fff"}}>
-            Copyright 2022 Subham Media
-          </Typography>
       </Box>
-      <Box p={2} sx={{overflowY:'auto',height:'90vh',flex:2}}>
-        <Typography variant="h4" fontWeight="bold" md={2} sx={{color:'white'}}>
-         {selectedCategory} <span style={{color:"#F31503"}}>videos</span>
-        </Typography>
+      <Box className="content-area landing-content">
+        <Stack className="feed-heading" direction="row" alignItems="center" justifyContent="space-between">
+          <Typography variant="h5" fontWeight="700">{selectedCategory}</Typography>
+          <Typography className="feed-count">Recommended for you</Typography>
+        </Stack>
         <Videos videos={videos} />
       </Box>
     </Stack>
